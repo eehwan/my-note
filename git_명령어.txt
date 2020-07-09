@@ -1,0 +1,43 @@
+ - Initialize
+git init
+git remote add origin "#URL"
+	# git remote -v (로 확인 가능)
+git config --global user.name "#name"
+git config --global user.email "#email"
+
+ - Pull
+git pull origin master
+	# git pull == git fetch + git merge
+
+ - Push
+ # git status
+ # git diff "file"
+git add .
+git commit -m "message"
+git push origin master
+
+ - git 해제 (.git 폴더 삭제)
+rm -r .git
+
+ - 강제 pull
+git fetch --all
+git reset --hard origin/master
+git pull -u origin +master
+
+================================================
+ - commit 수정 
+
+git log로 commit들의 해쉬값을 확인
+
+git rebase -i "{#}"		(원하는 commit 이전 기준으로)
+
+수정모드로 들어가서(insert키를 누름) 원하는 대사 commit을 edit으로 수정
+
+(esc를 누른후) :wq!을 쳐서 입력 완료
+
+git commit --amend --no-edit --date "(날짜입력양식)"
+
+	ex) Tue Jul 7 18:33:43 2020 +0900
+
+
+	##  ctrl/shift + ins 키를 통해 터미널 내에서 복사/붙여넣기 가능
