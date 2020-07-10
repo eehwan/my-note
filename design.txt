@@ -1,0 +1,32 @@
+화면 전환효과// background-attachment:
+스크롤 할때만 네비게이션바 보이게 설정
+화면 내 스크롤과 화면간 스크롤 구분을 어떻게 할것인가?
+
+스크롤 막는 자바스크립트
+function scrollDisable(){
+    $('body').addClass('scrollDisable').on('scroll touchmove mousewheel', function(e){
+        e.preventDefault();
+    });
+}
+function scrollAble(){
+    $('body').removeClass('scrollDisable').off('scroll touchmove mousewheel');
+}
+
+화면 크기 맞추기
+//jQuery                                    //넓이 = 높이*1.959
+$(window).resize(function(){
+    var winWidth = $(window).width();
+    var boxWidth = $('.box').width();
+    //max-width값인 500px아래서만 작동
+    if(winWidth <= 500){
+    	//1.681:1
+        $('.box').height(boxWidth*0.681);
+    }
+});
+
+location_bar
+<ul class="menu">
+  <li data-target="#about"> 소개 </li>
+  <li data-target="#member"> 멤버 </li>
+  <li data-target="#contact"> 연락 </li>
+</ul>

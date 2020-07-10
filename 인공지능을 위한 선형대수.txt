@@ -1,0 +1,25 @@
+인공지능을 위한 선형대수 - CS231n Convolutional Neural Networks for Visual Recognition
+
+실습.1
+numpy
+K = np.arry([],[],[])
+K.shape()
+K.T
+np.dot(A,B)
+np.eye(n) -> n차 Identity Matrix 생성
+
+역행렬을 직접 구해서 하는 방법은 오차들을 불러오기에 X
+-----------------------------------------
+from numpy.linalg import inv
+
+A_inv = inv(A)
+
+  A*A_inv != np.eye( n )
+
+  np.dot(A, A_inv) = np.eye( n )
+  A.dot(A_inv) = np.eye( n )
+------------------------------------------
+from numpy.linalg import solve
+X = solve(A, B)
+
+span
