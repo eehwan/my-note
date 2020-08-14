@@ -14,3 +14,11 @@
 값이 전달되지 않는다.
 -sessionStorage는 값이 전달되지 않고
 브라우저 종료시 삭제된다.
+
+
+
+
+
+####주의사항
+비밀번호와 같은 중요한 정보는 hash, salt, key stretching을 사용하여 암호화 하여야 한다.
+library- PBKDF2, bcrypt

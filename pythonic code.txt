@@ -1,0 +1,7 @@
+string.split(" ")
+
+"".join(x:list)
+
+for index, value in enumerate(x:list):
+
+zip()
