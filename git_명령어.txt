@@ -1,17 +1,17 @@
  - Initialize
 git init
-git remote add origin "#URL"
+git remote add origin "@URL@"
 	# git remote -v (로 확인 가능)
-git config --global user.name "#name"
-git config --global user.email "#email"
+git config --global user.name "@name@"
+git config --global user.email "@email@"
 
  - Pull
 git pull origin master
 	# git pull == git fetch + git merge
 
  - Push
- # git status
- # git diff "file"
+// git status //
+// git diff "@fileName@" //
 git add .
 git commit -m "message"
 git push origin master
@@ -24,12 +24,24 @@ git fetch --all
 git reset --hard origin/master
 git pull -u origin +master
 
+ - 강제 push
+git push -u origin +master
+
+================================================
+
+ -  git status / git commit -a 시 한글 파일명 깨짐 현상
+git config --global core.quotepath false
+
+ -  git log시 한글이 깨짐 현상
+git config --global i18n.commitEncoding utf-8
+git config --global i18n.logOutputEncoding utf-8
+
 ================================================
  - commit 수정 
 
 git log로 commit들의 해쉬값을 확인
 
-git rebase -i "{#}"		(원하는 commit 이전 기준으로)
+git rebase -i "@hash"	(원하는 commit 이전 기준으로)
 
 수정모드로 들어가서(insert키를 누름) 원하는 대사 commit을 edit으로 수정
 
