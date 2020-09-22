@@ -1,7 +1,0 @@
-npm install @module_name@
-npm install @module_name@ -g
-npm install @module_name@ -d
-
-npm list -g --depth=0 
-
-npm uninstall @module_name
