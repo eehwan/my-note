@@ -61,6 +61,22 @@ rebase로 병합하기
   git merge <last_HEAD branch>
     # 최종적인 내용은 merge 했을 때와 같지만, 이력이 다르다.
 ```
+----------------------------
+### tag 추가하기
+```
+git tag
+git tag <tagName>
+  # 현재 HEAD branch에 tag 추가
+git tag -a <tagName>
+  # tag에 주석 추가
+git tag -am <tagName>
+  # 한줄 주석 추가
+git tag -n
+  # 태그목록과 주석 모아보기
+git tag -d <tagName>
+  # 태그 삭제하기
+
+```
 ----------------------
 
 ###  git status / git commit -a 시 한글 파일명 깨짐 현상
@@ -79,14 +95,19 @@ git config --global i18n.logOutputEncoding utf-8
 ```
 git log로 commit들의 해쉬값을 확인
 
-git rebase -i "@hash"	(원하는 commit 이전 기준으로)
 
-수정모드로 들어가서(insert키를 누름) 원하는 대사 commit을 edit으로 수정
+git rebase -i <hash>	(원하는 commit 이전 기준으로)
 
-(esc를 누른후) :wq!을 쳐서 입력 완료
+수정모드로 들어가서(insert키) 원하는 commit에서 pick을 edit으로 수정,
+(esc를 누른후 -> :wq! 입력 -> 빠져나오기)
 
-git commit --amend --no-edit --date "(날짜입력양식)"
+git commit --amend
+  # 수정모드 진행, 이후 위와 똑같이 빠져나오기
 
-	ex) Tue Jul 7 18:33:43 2020 +0900
+
+- commit 날짜 변경
+  git commit --amend --no-edit --date "(날짜입력양식)"
+
+	 ex) Tue Jul 7 18:33:43 2020 +0900
 ```
-```ctrl/shift + ins 키를 통해 터미널 내에서 복사/붙여넣기 가능```
+```터미널 내에서 복사/붙여넣기:  shift/ctrl + ins```
