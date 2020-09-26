@@ -51,6 +51,15 @@ git merge <branchName>
   # 현재 HEAD branch에 특정branch 병합
 git branch -d <branchName>
   # 특정branch 삭제
+
+rebase로 병합하기  
+  git rebase <branchName>
+    # HEAD branch를 <branchName> 뒤에 옮긴다. 실행 후 충돌은 직접 수정하고,
+      git rebase --continue (취소하려면 --abort옵션 사용)
+  git checkout <branchName>
+    # <branchName>으로 HEAD를 변경
+  git merge <last_HEAD branch>
+    # 최종적인 내용은 merge 했을 때와 같지만, 이력이 다르다.
 ```
 ----------------------
 
