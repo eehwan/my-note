@@ -22,7 +22,7 @@ maxAge나 expire를 설정하지 않으면 기본적으로 (브라우저 종료�
 
 
 #### 주의사항
-```
+"""
 비밀번호와 같은 중요한 정보는 hash, salt, key stretching을 사용하여 암호화 하여야 한다.
 library- PBKDF2, bcrypt
-```
+"""
